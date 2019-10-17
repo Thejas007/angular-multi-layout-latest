@@ -52,7 +52,7 @@ const appRoutes: Routes = [
 },
     //no layout routes
     { path: 'login', component: LoginComponent},
-    { path: 'login-new', component: LoginNewComponent},
+    { path: 'clr-login', component: LoginNewComponent},
     { path: 'register', component: RegisterComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
