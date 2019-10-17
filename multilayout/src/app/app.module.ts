@@ -18,9 +18,17 @@ import { ProfileComponent } from './profile/profile.component';
 
 import { routing } from './app.routing';
 
+import { ClarityModule } from '@clr/angular';
+
+import { LoginNewComponent } from './login-new/login-new.component';
+import { IntelligenceInstancesComponent } from './intelligence-instances/intelligence-instances.component';
+import { ClrAppHeaderComponent } from './_layout/clr-app-header/clr-app-header.component';
+import { ClrAppLayoutComponent } from './_layout/clr-app-layout/clr-app-layout.component';
+
+
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, routing ],
-  declarations: [ AppComponent, HelloComponent, AppLayoutComponent, SiteLayoutComponent, AppHeaderComponent, SiteHeaderComponent, SiteFooterComponent, LoginComponent, DashboardComponent, HomeComponent, AboutComponent, RegisterComponent, ProfileComponent ],
+  imports:      [ BrowserModule, FormsModule, routing, ClarityModule ],
+  declarations: [ AppComponent, HelloComponent, AppLayoutComponent, SiteLayoutComponent, AppHeaderComponent, SiteHeaderComponent, SiteFooterComponent, LoginComponent, DashboardComponent, HomeComponent, AboutComponent, RegisterComponent, ProfileComponent, LoginNewComponent, IntelligenceInstancesComponent, ClrAppHeaderComponent, ClrAppLayoutComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
