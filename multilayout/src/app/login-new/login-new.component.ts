@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,9 +13,12 @@ export class LoginNewComponent implements OnInit {
     password: '',
     rememberMe: false,
   };
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  navigateToDashboard(){
+    this.router.navigateByUrl('/clr-intelligence-instances');
+  }
 }

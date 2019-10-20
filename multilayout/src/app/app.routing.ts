@@ -1,3 +1,4 @@
+import { AddEditIntelligenceInstanceComponent } from './intelligence-instances/Add/add-edit-intelligence-instance/add-edit-intelligence-instance.component';
 import { ClrAppLayoutComponent } from './_layout/clr-app-layout/clr-app-layout.component';
 import { IntelligenceInstancesComponent } from './intelligence-instances/intelligence-instances.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -19,12 +20,12 @@ import { LoginNewComponent } from './login-new/login-new.component';
 
 const appRoutes: Routes = [
 
+  { path: '', component: LoginNewComponent, pathMatch: 'full'},
     //Site routes goes here
     {
         path: '',
         component: SiteLayoutComponent,
         children: [
-          { path: '', component: HomeComponent, pathMatch: 'full'},
           { path: 'about', component: AboutComponent },
           { path: 'test/:id', component: AboutComponent }
         ]
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
   children: [
     { path: 'clr-dashboard', component: DashboardComponent },
     { path: 'clr-profile', component: ProfileComponent },
-    { path: 'clr-intelligence-instances', component: IntelligenceInstancesComponent }
+    { path: 'clr-intelligence-instances', component: IntelligenceInstancesComponent },
+    { path: 'add-edit-intelligence-instance', component: AddEditIntelligenceInstanceComponent },
   ]
 },
     //no layout routes

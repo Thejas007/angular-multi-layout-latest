@@ -1,0 +1,23 @@
+
+<!-- <clr-modal [(clrModalOpen)]="open">
+  <h3 class="modal-title">Add/ Edit intelligence instance</h3>
+  <div class="modal-body">
+
+
+
+
+  </div>
+
+</clr-modal> -->
+<h3 class="modal-title">Add/ Edit intelligence instance</h3>
+<form clrForm [formGroup]="form">
+  <clr-input-container>
+    <label>First Name</label>
+    <input clrInput formControlName="first" />
+    <clr-control-error *clrIfError="'required'">First Name Required</clr-control-error>
+  </clr-input-container>
+
+
+
+  <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Submit</button>
+</form>

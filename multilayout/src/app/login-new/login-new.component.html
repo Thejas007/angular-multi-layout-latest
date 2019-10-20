@@ -3,17 +3,17 @@
         <form class="login">
             <section class="title">
                 <h3 class="welcome">Welcome to</h3>
-                Company Product Name
-                <h5 class="hint">Use your Company ID to sign in or create one now</h5>
+                App Manager
+                <!-- <h5 class="hint">Use your Company ID to sign in or create one now</h5> -->
             </section>
             <div class="login-group">
-              <clr-select-container>
+              <!-- <clr-select-container>
                     <label class="clr-sr-only">User Role</label>
                     <select clrSelect name="type" [(ngModel)]="form.type">
                       <option value="local">Local Users</option>
                       <option value="admin">Administrator</option>
                     </select>
-                  </clr-select-container>
+                  </clr-select-container> -->
                   <clr-input-container>
                     <label class="clr-sr-only">Username</label>
                     <input type="text" name="username" clrInput placeholder="Username" [(ngModel)]="form.username"/>
@@ -29,8 +29,8 @@
                 <div class="error active">
                     Invalid user name or password
                 </div>
-                <button type="submit" class="btn btn-primary">NEXT</button>
-                <a href="javascript://" class="signup">Sign up for a Company ID</a>
+                <button type="submit" (click)="navigateToDashboard()" class="btn btn-primary">Login</button>
+                <!-- <a href="javascript://" class="signup">Sign up for a Company ID</a> -->
             </div>
         </form>
     </div>

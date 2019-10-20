@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
@@ -24,11 +24,12 @@ import { LoginNewComponent } from './login-new/login-new.component';
 import { IntelligenceInstancesComponent } from './intelligence-instances/intelligence-instances.component';
 import { ClrAppHeaderComponent } from './_layout/clr-app-header/clr-app-header.component';
 import { ClrAppLayoutComponent } from './_layout/clr-app-layout/clr-app-layout.component';
-
+import { AddEditIntelligenceInstanceComponent } from './intelligence-instances/Add/add-edit-intelligence-instance/add-edit-intelligence-instance.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, routing, ClarityModule ],
-  declarations: [ AppComponent, HelloComponent, AppLayoutComponent, SiteLayoutComponent, AppHeaderComponent, SiteHeaderComponent, SiteFooterComponent, LoginComponent, DashboardComponent, HomeComponent, AboutComponent, RegisterComponent, ProfileComponent, LoginNewComponent, IntelligenceInstancesComponent, ClrAppHeaderComponent, ClrAppLayoutComponent ],
+  imports:      [ BrowserAnimationsModule, BrowserModule, FormsModule, ReactiveFormsModule, routing, ClarityModule ],
+  declarations: [ AppComponent, HelloComponent, AppLayoutComponent, SiteLayoutComponent, AppHeaderComponent, SiteHeaderComponent, SiteFooterComponent, LoginComponent, DashboardComponent, HomeComponent, AboutComponent, RegisterComponent, ProfileComponent, LoginNewComponent, IntelligenceInstancesComponent, ClrAppHeaderComponent, ClrAppLayoutComponent, AddEditIntelligenceInstanceComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
