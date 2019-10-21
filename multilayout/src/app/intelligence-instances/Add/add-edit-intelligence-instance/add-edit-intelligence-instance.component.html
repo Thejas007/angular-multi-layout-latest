@@ -1,23 +1,124 @@
+<clr-modal [(clrModalOpen)]="open" [clrModalClosable]="false" [clrModalSize]="'lg'">
 
-<!-- <clr-modal [(clrModalOpen)]="open">
-  <h3 class="modal-title">Add/ Edit intelligence instance</h3>
+  <h3 class="modal-title"><strong> Add/ Edit intelligence instance</strong></h3>
+
   <div class="modal-body">
 
+
+
+    <form clrForm [formGroup]="form" class="clr-form">
+      <section>
+
+
+        <clr-input-container>
+          <label> Friendly Name</label>
+          <input clrInput formControlName="fiendlyName" />
+          <clr-control-error *clrIfError="'required'">Friendly Name field is required</clr-control-error>
+        </clr-input-container>
+        <clr-input-container>
+          <label>Endpoint URL</label>
+          <input clrInput formControlName="endpointUrl" />
+          <clr-control-error *clrIfError="'required'">Endpoint URL field is required</clr-control-error>
+        </clr-input-container>
+        <clr-input-container>
+          <label>Identifier</label>
+          <input clrInput formControlName="nodeIdentifier" />
+          <clr-control-error *clrIfError="'required'">Identifier field is required</clr-control-error>
+        </clr-input-container>
+        <clr-select-container>
+          <label>Usage</label>
+          <select clrSelect name="usageOptions" formControlName="usageOptions">
+            <option *ngFor="let types of usageOptions; let i = index" [value]="usageOptions[i].id">
+              {{usageOptions[i].name}}
+            </option>
+          </select>
+          <clr-control-helper>Instance usage types</clr-control-helper>
+          <clr-control-error *clrIfError="'required'">Usage field is required</clr-control-error>
+        </clr-select-container>
+
+        <clr-select-container>
+          <label>Status</label>
+          <select clrSelect name="instanceStatus" formControlName="instanceStatus">
+            <option *ngFor="let s of instanceStatus; let i = index" [value]="instanceStatus[i].id">
+              {{instanceStatus[i].name}}
+            </option>
+          </select>
+          <clr-control-helper>Instance status</clr-control-helper>
+          <clr-control-error *clrIfError="'required'">Instance status field is required</clr-control-error>
+        </clr-select-container>
+      </section>
+
+      <section>
+        <fieldset class="fieldSet">
+          <legend class="legend">
+            oAuth Token Request
+          </legend>
+          <div class="sub-container">
+            <div class="clr-row">
+              <div class="clr-col-sm-12 clr-col-md-12">
+
+                <clr-input-container>
+                  <label>Authorization URL</label>
+                  <input clrInput formControlName="authorizationtUrl" />
+                  <clr-control-error *clrIfError="'required'">Authorization URL field is required</clr-control-error>
+                </clr-input-container>
+
+                <clr-input-container>
+                  <label>Client ID</label>
+                  <input clrInput formControlName="clientId" />
+                  <clr-control-error *clrIfError="'required'">Client ID field is required</clr-control-error>
+                </clr-input-container>
+
+                <clr-input-container>
+
+                  <label>Client Secret</label>
+                  <span>
+                      <a  role="tooltip" aria-haspopup="true" class="tooltip tooltip-sm tooltip-top-right">
+                          <clr-icon shape="info-circle" size="24"></clr-icon>
+                          <span class="tooltip-content">Client Secret will be encrypted</span>
+                      </a>
+                    </span>
+                  <input type="password" clrInput formControlName="clientSecret" />
+
+                  <clr-control-error *clrIfError="'required'">Client Secret field is required</clr-control-error>
+                </clr-input-container>
+
+                <div class="form-btn">
+                  <button class="btn btn-sm" >
+                    Test connection</button>
+                    <a  role="tooltip" aria-haspopup="true" class="tooltip tooltip-sm tooltip-top-right">
+                        <clr-icon shape="info-circle" size="24"></clr-icon>
+                        <span class="tooltip-content">Validates the communication using given credentials</span>
+                    </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+      </section>
+
+      <div>
+        <button class="clr-step btn btn-primary" type="submit" (click)="navigateToInstanceDashBoard(true)"
+          [disabled]="form.invalid">Submit</button>
+        <button class="btn btn-secondory" type="submit" (click)="navigateToInstanceDashBoard(false)">Cancel</button>
+
+      </div>
+
+      <div *ngIf="savingInstance">
+        <clr-spinner clrInline>
+          Saving
+        </clr-spinner>
+        <span>
+          Saving
+        </span>
+      </div>
+    </form>
 
 
 
   </div>
 
-</clr-modal> -->
-<h3 class="modal-title">Add/ Edit intelligence instance</h3>
-<form clrForm [formGroup]="form">
-  <clr-input-container>
-    <label>First Name</label>
-    <input clrInput formControlName="first" />
-    <clr-control-error *clrIfError="'required'">First Name Required</clr-control-error>
-  </clr-input-container>
 
 
-
-  <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Submit</button>
-</form>
+</clr-modal>
